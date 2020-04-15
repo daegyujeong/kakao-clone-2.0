@@ -2,16 +2,61 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
+}
+@keyframes zoom-out {
+  from {
+    transform: none;
+  }
+  to {
+    transform: scale(2.5) translateX(60px);
+  }
+}
+@keyframes zoom-in {
+  from {
+    transform: scale(2.5) translateX(60px);
+  }
+  to {
+    transform: none;
+  }
+}
+.friends .friend .friend__avatar {
+  animation: zoom-in 0.5s ease-in forwards;
+}
+.friends .friend .friend__avatar:hover {
+  animation: zoom-out 0.5s ease-in forwards;
 }
 .friend .friend__avatar {
   width: 50px;
   border-radius: 38%;
+  min-height: 1vh;
+  z-index: 2;
+  cursor: pointer;
 }
 .friend__avatar.g-avatar {
   width: 70px;
+  min-height: 1vh;
+  z-index: 2;
 }
 .friend__avatar.m-avatar {
   width: 60px;
+  min-height: 1vh;
+  z-index: 2;
+}
+.friend .friend__avatar.group-avatar {
+  width: 25px;
+  height: 25px;
+  min-height: 1vh;
+  z-index: 2;
+  margin-right: 5px;
+}
+.friend__profilecontainer {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 15px;
 }
 
 .friend .friend__column {
